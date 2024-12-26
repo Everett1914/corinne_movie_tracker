@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>Benoit Dashboard</title>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+   <meta content="text/html; charset=utf-8" />
+ </head>
+ <body>      
+ <br>
+  <form #data = "ngForm" (ngSubmit) = "onClickSubmit(data.value)" >
+
+    <label for="new-show" class = "inp_lab">Name    </label>
+    <input type = "text" class = "inp_lab" name = "name" placeholder = "Name" #showName ngModel>
+    <br><br>
+    <label for="new-show" class = "inp_lab">Genre   </label>
+    <input type = "text" class = "inp_lab" name = "genre" placeholder = "Genre" #showGenre ngModel>
+    <br><br>
+    <label for="new-show" class = "inp_lab">Source  </label>
+    <input type = "text" class = "inp_lab" name = "source" placeholder = "Source" #showSource ngModel>
+    <br><br>
+    <label for="new-show" class = "inp_lab">Cost    </label>
+    <input type = "text" class = "inp_lab" name = "cost" placeholder = "Cost" #showCost ngModel>
+    <br><br>
+    <label for="new-show" class = "inp_lab">Type    </label>
+    <input type = "text" class = "inp_lab" name = "type" placeholder = "Type" #showType ngModel>
+    <br><br>
+    <div class = "wrapper">
+      <div class = "radio_group">      
+        <input type = "radio" name = "rating" value="Love" #showRating ngModel> 
+        <label for="like">
+          <em class = "far fa-thumbs-up fa-lg"></em>
+        </label>
+      </div>
+
+      <div class = "radio_group">      
+        <input type = "radio" name = "rating" value="Like" #showRating ngModel>
+        <label for="like">
+          <em class = "far fa-thumbs-up"></em>
+        </label>
+      </div>
+
+      <div class = "radio_group">      
+        <input type = "radio" name = "rating" value="Dislike" #showRating ngModel> 
+        <label for="like">
+          <em class = "far fa-thumbs-down"></em>
+        </label>
+      </div>
+    </div>
+
+    <br> 
+
+    <button class="btn" (click)="showName.value=''; showGenre.value=''; showSource.value=''; showCost.value=''; showType.value=''; showRating.value=''">Submit</button> 
+
+  </form>
+
+ </body>
+
+</html>

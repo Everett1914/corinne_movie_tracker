@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>Benoit Dashboard</title>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+   <meta content="text/html; charset=utf-8" />
+ </head>
+ <body>
+    <br>
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+    </mat-form-field>
+    <br><br>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef id="Position">Media ID</th>
+            <td mat-cell *matCellDef="let element">{{element.media_id}}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef id="Name">Name</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+
+        <!-- Genre Column -->
+        <ng-container matColumnDef="genre">
+            <th mat-header-cell *matHeaderCellDef id="Genre">Genre</th>
+            <td mat-cell *matCellDef="let element">{{element.genre}}</td>
+        </ng-container>
+
+        <!-- Source Column -->
+        <ng-container matColumnDef="source">
+            <th mat-header-cell *matHeaderCellDef id="Source">Source</th>
+            <td mat-cell *matCellDef="let element">{{element.source}}</td>
+        </ng-container>
+
+        <!-- Cost Column -->
+        <ng-container matColumnDef="cost">
+            <th mat-header-cell *matHeaderCellDef id="Cost">Cost</th>
+            <td mat-cell *matCellDef="let element">{{element.cost |number:'1.2-2'}}</td>
+        </ng-container>
+
+        <!-- Type Column -->
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef id="Type">Type</th>
+            <td mat-cell *matCellDef="let element">{{element.type}}</td>
+        </ng-container>
+
+        <!-- Rating Column -->
+        <ng-container matColumnDef="rating">
+            <th mat-header-cell *matHeaderCellDef id="Rating">Rating</th>
+            <td mat-cell *matCellDef="let element">{{element.rating}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef id="Date">Date</th>
+            <td mat-cell *matCellDef="let element">{{element.date|date:'yyyy-MM-dd'}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+ </body>
+
+</html>
+
