@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/corinne_movie_tracker",
+    "public": "dist/corinne_movie_tracker/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
