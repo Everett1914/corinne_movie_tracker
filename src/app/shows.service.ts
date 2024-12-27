@@ -10,7 +10,8 @@ import { ShowElement } from './ShowElement';
 export class ShowsService {
   
   //private showsUrl = 'https://benoit-movie-tracker-api.herokuapp.com/shows';  // URL to web api
-  private mediaUrl = 'http://localhost:3000/media_av/';// URL to local host api
+  //private mediaUrl = 'http://localhost:3000/media_av/';// URL to local host api
+  private mediaUrl = 'https://corinne-movie-tracker-api.onrender.com/media_av/';// URL to local host api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
