@@ -16,7 +16,7 @@ import { MatInputModule } from '@angular/material/input';
   imports: [MatTableModule, MatFormFieldModule, CommonModule, MatButtonToggleModule, FormsModule, MatInputModule]
 })
 
-export class MoviesComponent implements AfterViewInit {
+export class MoviesComponent implements OnInit {
 
   media: ShowElement[] = [];
 
@@ -25,7 +25,7 @@ export class MoviesComponent implements AfterViewInit {
   displayedColumns: string[] = ['position', 'name', 'genre', 'source', 'cost', 'type', 'rating', 'date'];
   dataSource = new MatTableDataSource<ShowElement>();
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.getAllMedia();
   }
 
